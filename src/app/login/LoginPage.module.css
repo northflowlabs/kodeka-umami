@@ -1,0 +1,130 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Venstre: branded navy-panel */
+.panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 64px 56px;
+  color: #fff;
+  background:
+    radial-gradient(120% 120% at 0% 0%, #3a4a72 0%, #2b3656 46%, #1b2440 100%);
+}
+
+.panel::before {
+  /* subtil royal-blå glød */
+  content: '';
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  right: -120px;
+  top: -120px;
+  background: radial-gradient(circle, rgba(90, 127, 224, 0.35) 0%, rgba(90, 127, 224, 0) 70%);
+  pointer-events: none;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.brandName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.center {
+  position: relative;
+  z-index: 1;
+}
+
+.headline {
+  margin: 0;
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  max-width: 15ch;
+}
+
+.tagline {
+  margin: 20px 0 0;
+  max-width: 44ch;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.features {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #5a7fe0;
+  box-shadow: 0 0 12px rgba(90, 127, 224, 0.8);
+  flex-shrink: 0;
+}
+
+.foot {
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.watermark {
+  position: absolute;
+  right: -70px;
+  bottom: -80px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Høyre: skjema */
+.formSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--surface-raised);
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    display: none;
+  }
+  .formSide {
+    min-height: 100vh;
+  }
+}

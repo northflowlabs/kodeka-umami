@@ -1,7 +1,7 @@
 :root {
   --font-family: var(--font-inter), sans-serif;
-  /* Northflow brand: dyp royal-navy */
-  --primary: oklch(47% 0.13 260);
+  /* Northflow brand: royal-blå (matcher graf-aksent #2f54b0) */
+  --primary: oklch(45% 0.155 266);
   --primary-foreground: oklch(98.5% 0 0);
 }
 

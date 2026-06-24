@@ -31,8 +31,8 @@ export function LoginForm() {
 
   return (
     <Column justifyContent="center" alignItems="center" gap="6">
-      <Logo width={56} height={56} style={{ display: 'block' }} />
-      <Heading>Northflow Analytics</Heading>
+      <Logo width={44} height={44} style={{ display: 'block' }} />
+      <Heading>Logg inn</Heading>
       <Form onSubmit={handleSubmit} error={getErrorMessage(error)} style={{ minWidth: 300 }}>
         <FormField
           label={t(labels.username)}
