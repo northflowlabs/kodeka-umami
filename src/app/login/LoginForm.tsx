@@ -5,7 +5,6 @@ import {
   FormField,
   FormSubmitButton,
   Heading,
-  Icon,
   PasswordField,
   TextField,
 } from '@umami/react-zen';
@@ -32,10 +31,8 @@ export function LoginForm() {
 
   return (
     <Column justifyContent="center" alignItems="center" gap="6">
-      <Icon size="lg">
-        <Logo />
-      </Icon>
-      <Heading>umami</Heading>
+      <Logo width={56} height={56} style={{ display: 'block' }} />
+      <Heading>Northflow Analytics</Heading>
       <Form onSubmit={handleSubmit} error={getErrorMessage(error)} style={{ minWidth: 300 }}>
         <FormField
           label={t(labels.username)}
