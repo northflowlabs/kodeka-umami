@@ -1,17 +1,15 @@
 import type { SVGProps } from 'react';
 
-// Northflow-bowtie i hvitt, for mørke flater.
+// kodeka-merket, for mørke flater. Grønn form leser fint på mørkt.
 const SvgLogoWhite = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={20}
     height={20}
-    fill="#fff"
     viewBox="0 0 24 24"
     {...props}
   >
-    <path d="M4.6 6 12 12 4.6 18Z" />
-    <path d="M19.4 6 12 12 19.4 18Z" />
+    <image href="/kodeka-logo.png" x="0" y="0" width="24" height="24" />
   </svg>
 );
 export default SvgLogoWhite;

@@ -29,11 +29,11 @@ export function LoginPage() {
             <path fill="#fff" d="M4.6 6 12 12 4.6 18Z" />
             <path fill="#fff" d="M19.4 6 12 12 19.4 18Z" />
           </svg>
-          <span className={styles.brandName}>Northflow Analytics</span>
+          <span className={styles.brandName}>kodeka analyse</span>
         </div>
 
         <div className={styles.center}>
-          <h1 className={styles.headline}>Innsikt på tvers av alle Northflow-flater.</h1>
+          <h1 className={styles.headline}>Innsikt på tvers av alle kodeka-flater.</h1>
           <p className={styles.tagline}>
             Ett dashbord, full kontroll. Personvernvennlig og cookieless, på egen
             infrastruktur.
@@ -49,12 +49,12 @@ export function LoginPage() {
             </li>
             <li>
               <span className={styles.dot} />
-              Data på Northflows egen plattform
+              Data på kodekas egen plattform
             </li>
           </ul>
         </div>
 
-        <div className={styles.foot}>© Northflow Technologies AS</div>
+        <div className={styles.foot}>© kodeka</div>
 
         <div className={styles.watermark} aria-hidden>
           <svg width="340" height="340" viewBox="0 0 24 24" fill="#fff">

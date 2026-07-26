@@ -78,7 +78,7 @@ export function MobileNav() {
       </MobileMenuButton>
       <Row alignItems="center" justifyContent="center" flexGrow={1}>
         <IconLabel icon={<Logo />} style={{ width: 'auto' }}>
-          <Text weight="bold">Northflow</Text>
+          <Text weight="bold">kodeka</Text>
         </IconLabel>
       </Row>
     </Grid>

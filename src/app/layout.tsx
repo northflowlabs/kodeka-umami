@@ -45,8 +45,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: getBaseUrl(headerStore),
     title: {
-      template: '%s | Northflow Analytics',
-      default: 'Northflow Analytics',
+      template: '%s | kodeka analyse',
+      default: 'kodeka analyse',
     },
   };
 }
