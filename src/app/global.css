@@ -21,6 +21,23 @@
   --interactive-bg: rgba(36, 23, 34, 0.05);
 }
 
+/* kodeka: rundere former på input og knapper, likt konsollet */
+[class~='rounded']:has(> input),
+[class~='rounded']:has(> textarea),
+[class~='rounded']:has(> select) {
+  border-radius: 0.85rem !important;
+}
+button[class~='rounded'] {
+  border-radius: 0.85rem !important;
+}
+/* litt rundere kort/paneler for et mykere kodeka-uttrykk */
+[class~='rounded-lg'] {
+  border-radius: 1rem !important;
+}
+[class~='rounded-md'] {
+  border-radius: 0.8rem !important;
+}
+
 html,
 body {
   font-family: var(--font-family), sans-serif;
