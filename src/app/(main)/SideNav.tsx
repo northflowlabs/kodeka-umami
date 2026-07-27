@@ -13,7 +13,7 @@ import {
 } from '@/components/icons';
 import { UserButton } from '@/components/input/UserButton';
 import { Logo } from '@/components/svg';
-import { BRAND } from '@/lib/brand';
+import { useBrand } from '@/lib/brand-context';
 import {
   Button,
   type ButtonProps,
@@ -31,6 +31,7 @@ export function SideNav(props: any) {
   const { t, labels } = useMessages();
   const { pathname, renderUrl, websiteId, teamId } = useNavigation();
   const [isCollapsed] = useGlobalState('sidenav-collapsed', false);
+  const BRAND = useBrand();
 
   const links = [
     ...(!teamId

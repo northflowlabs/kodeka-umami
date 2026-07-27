@@ -3,13 +3,14 @@ import { Loading } from '@umami/react-zen';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useLoginQuery } from '@/components/hooks';
-import { BRAND } from '@/lib/brand';
+import { useBrand } from '@/lib/brand-context';
 import { LoginForm } from './LoginForm';
 import styles from './LoginPage.module.css';
 
 export function LoginPage() {
   const { user, isLoading } = useLoginQuery();
   const router = useRouter();
+  const BRAND = useBrand();
 
   useEffect(() => {
     if (user) {

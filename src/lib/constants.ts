@@ -1,4 +1,4 @@
-import { BRAND } from './brand';
+import { DEFAULT_BRAND } from './brand';
 
 export const CURRENT_VERSION = process.env.currentVersion;
 export const AUTH_TOKEN = 'umami.auth';
@@ -12,9 +12,9 @@ export const LAST_TEAM_CONFIG = 'umami.last-team';
 export const VERSION_CHECK = 'umami.version-check';
 export const SHARE_TOKEN_HEADER = 'x-umami-share-token';
 export const SHARE_CONTEXT_HEADER = 'x-umami-share-context';
-export const HOMEPAGE_URL = BRAND.homepage;
-export const DOCS_URL = BRAND.homepage;
-export const REPO_URL = BRAND.homepage;
+export const HOMEPAGE_URL = DEFAULT_BRAND.homepage;
+export const DOCS_URL = DEFAULT_BRAND.homepage;
+export const REPO_URL = DEFAULT_BRAND.homepage;
 export const UPDATES_URL = '';
 export const TELEMETRY_PIXEL = '';
 export const FAVICON_URL = 'https://icons.duckduckgo.com/ip3/{{domain}}.ico';

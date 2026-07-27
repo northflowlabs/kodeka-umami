@@ -3,7 +3,8 @@ import { headers } from 'next/headers';
 import { Inter, Bricolage_Grotesque } from 'next/font/google';
 import { Suspense } from 'react';
 import { getBaseUrl } from '@/lib/get-base-url';
-import { BRAND } from '@/lib/brand';
+import { resolveBrand } from '@/lib/brand';
+import { BrandProvider } from '@/lib/brand-context';
 import { Providers } from './Providers';
 import '@umami/react-zen/styles.full.css';
 import './global.css';
@@ -21,7 +22,7 @@ const bricolage = Bricolage_Grotesque({
   variable: '--font-bricolage',
 });
 
-export default function ({ children }) {
+export default async function ({ children }) {
   if (process.env.DISABLE_UI) {
     return (
       <html>
@@ -30,22 +31,26 @@ export default function ({ children }) {
     );
   }
 
+  const brand = resolveBrand((await headers()).get('host'));
+
   return (
     <html
       lang="en"
-      data-brand={BRAND.slug}
+      data-brand={brand.slug}
       className={`${bricolage.variable} ${inter.variable}`}
     >
       <head>
-        <link rel="icon" href={BRAND.favicon} type="image/svg+xml" />
-        <meta name="msapplication-TileColor" content={BRAND.themeColor} />
-        <meta name="theme-color" content={BRAND.themeColor} />
+        <link rel="icon" href={brand.favicon} />
+        <meta name="msapplication-TileColor" content={brand.themeColor} />
+        <meta name="theme-color" content={brand.themeColor} />
         <meta name="robots" content="noindex,nofollow" />
       </head>
       <body>
-        <Suspense>
-          <Providers>{children}</Providers>
-        </Suspense>
+        <BrandProvider slug={brand.slug}>
+          <Suspense>
+            <Providers>{children}</Providers>
+          </Suspense>
+        </BrandProvider>
       </body>
     </html>
   );
@@ -53,12 +58,13 @@ export default function ({ children }) {
 
 export async function generateMetadata(): Promise<Metadata> {
   const headerStore = await headers();
+  const brand = resolveBrand(headerStore.get('host'));
 
   return {
     metadataBase: getBaseUrl(headerStore),
     title: {
-      template: `%s | ${BRAND.name}`,
-      default: BRAND.name,
+      template: `%s | ${brand.name}`,
+      default: brand.name,
     },
   };
 }

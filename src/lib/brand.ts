@@ -32,7 +32,7 @@ export const BRANDS: Record<BrandSlug, Brand> = {
     mark: 'k',
     markBg: '#c9e09b',
     markFg: '#4b1e3d',
-    favicon: '/brand/kodeka.svg',
+    favicon: '/brand/kodeka.png',
   },
   northflow: {
     slug: 'northflow',
@@ -58,9 +58,18 @@ export const BRANDS: Record<BrandSlug, Brand> = {
   },
 };
 
-export const BRAND_SLUG: BrandSlug =
-  (process.env.NEXT_PUBLIC_ANALYTICS_BRAND as BrandSlug) in BRANDS
-    ? (process.env.NEXT_PUBLIC_ANALYTICS_BRAND as BrandSlug)
-    : 'kodeka';
+/**
+ * Resolve the brand from the request host. Robust against the shared Vercel
+ * team suffix: every deployment is `*-northflow.vercel.app`, so we match the
+ * unique tokens first (kampform, kodeka) and only then the umami/northflow host.
+ */
+export function resolveBrand(host?: string | null): Brand {
+  const h = (host || '').toLowerCase();
+  if (h.includes('kampform')) return BRANDS.kampform;
+  if (h.includes('kodeka')) return BRANDS.kodeka;
+  if (h === 'analytics.northflow.no' || h.startsWith('umami-') || h.startsWith('umami.'))
+    return BRANDS.northflow;
+  return BRANDS.kodeka;
+}
 
-export const BRAND: Brand = BRANDS[BRAND_SLUG];
+export const DEFAULT_BRAND: Brand = BRANDS.kodeka;

@@ -7,13 +7,14 @@ import { Globe, Grid2x2, LayoutDashboard, LinkIcon } from '@/components/icons';
 import { MobileMenuButton } from '@/components/input/MobileMenuButton';
 import { UserButton } from '@/components/input/UserButton';
 import { Logo } from '@/components/svg';
-import { BRAND } from '@/lib/brand';
+import { useBrand } from '@/lib/brand-context';
 import { AdminNav } from './admin/AdminNav';
 import { SettingsNav } from './settings/SettingsNav';
 
 export function MobileNav() {
   const { t, labels } = useMessages();
   const { pathname, websiteId, renderUrl } = useNavigation();
+  const BRAND = useBrand();
   const isAdmin = pathname.includes('/admin');
   const isSettings = pathname.includes('/settings');
   const isMain = !websiteId && !isAdmin && !isSettings;
