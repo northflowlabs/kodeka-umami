@@ -1,8 +1,24 @@
 :root {
-  --font-family: var(--font-inter), sans-serif;
-  /* Northflow brand: royal-blå (matcher graf-aksent #2f54b0) */
-  --primary: oklch(35% 0.09 349);
-  --primary-foreground: oklch(96% 0.012 85);
+  /* kodeka-tema: overstyrer react-zen (lastes etter styles.full.css). */
+  --font-family: var(--font-bricolage), var(--font-inter), sans-serif;
+
+  --primary: oklch(35% 0.09 349); /* plomme */
+  --primary-foreground: oklch(96% 0.012 85); /* krem */
+
+  /* Flater, varm krem */
+  --surface-raised: #faf5ec; /* app-bakgrunn + kort */
+  --surface-base: #f4ecdd;
+  --surface-sunken: #ece2d0;
+  --surface-inverted: #4b1e3d; /* plomme */
+
+  /* Tekst, blekk */
+  --text-primary: #241722;
+  --text-muted: rgba(36, 23, 34, 0.55);
+  --text-disabled: rgba(36, 23, 34, 0.32);
+
+  /* Linjer + interaktiv */
+  --border-default: rgba(36, 23, 34, 0.12);
+  --interactive-bg: rgba(36, 23, 34, 0.05);
 }
 
 html,
