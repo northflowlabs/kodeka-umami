@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import { Inter, Bricolage_Grotesque } from 'next/font/google';
 import { Suspense } from 'react';
 import { getBaseUrl } from '@/lib/get-base-url';
+import { BRAND } from '@/lib/brand';
 import { Providers } from './Providers';
 import '@umami/react-zen/styles.full.css';
 import './global.css';
@@ -30,11 +31,15 @@ export default function ({ children }) {
   }
 
   return (
-    <html lang="en" className={`${bricolage.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      data-brand={BRAND.slug}
+      className={`${bricolage.variable} ${inter.variable}`}
+    >
       <head>
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <meta name="msapplication-TileColor" content="#4B1E3D" />
-        <meta name="theme-color" content="#4B1E3D" />
+        <link rel="icon" href={BRAND.favicon} type="image/svg+xml" />
+        <meta name="msapplication-TileColor" content={BRAND.themeColor} />
+        <meta name="theme-color" content={BRAND.themeColor} />
         <meta name="robots" content="noindex,nofollow" />
       </head>
       <body>
@@ -52,8 +57,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: getBaseUrl(headerStore),
     title: {
-      template: '%s | kodeka analytics',
-      default: 'kodeka analytics',
+      template: `%s | ${BRAND.name}`,
+      default: BRAND.name,
     },
   };
 }

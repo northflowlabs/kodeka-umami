@@ -1,6 +1,7 @@
 'use client';
 import { useShare } from '@/components/hooks';
 import { Logo } from '@/components/svg';
+import { BRAND } from '@/lib/brand';
 import { Icon, Row, Text } from '@umami/react-zen';
 
 const LOGO_SIZE = { sm: 24, md: 32, lg: 40 };
@@ -8,8 +9,8 @@ const TEXT_SIZE = { sm: 'sm', md: 'base', lg: 'lg' } as const;
 
 export function ShareBranding({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   const share = useShare();
-  const logoDomain = share?.whiteLabel?.domainName || 'https://kodeka.no';
-  const logoName = share?.whiteLabel?.displayName || 'kodeka analytics';
+  const logoDomain = share?.whiteLabel?.domainName || BRAND.homepage;
+  const logoName = share?.whiteLabel?.displayName || BRAND.name;
   const logoImage = share?.whiteLabel?.logoUrl;
   const height = LOGO_SIZE[size];
 

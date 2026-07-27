@@ -13,6 +13,7 @@ import {
 } from '@/components/icons';
 import { UserButton } from '@/components/input/UserButton';
 import { Logo } from '@/components/svg';
+import { BRAND } from '@/lib/brand';
 import {
   Button,
   type ButtonProps,
@@ -93,7 +94,7 @@ export function SideNav(props: any) {
         <Row paddingX="3" alignItems="center" justifyContent="space-between" flexGrow="1">
           {!isCollapsed && (
             <IconLabel icon={<Logo />}>
-              <Text weight="bold">kodeka</Text>
+              <Text weight="bold">{BRAND.short}</Text>
             </IconLabel>
           )}
           <PanelButton />

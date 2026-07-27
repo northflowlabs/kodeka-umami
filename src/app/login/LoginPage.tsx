@@ -3,6 +3,7 @@ import { Loading } from '@umami/react-zen';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useLoginQuery } from '@/components/hooks';
+import { BRAND } from '@/lib/brand';
 import { LoginForm } from './LoginForm';
 import styles from './LoginPage.module.css';
 
@@ -28,15 +29,15 @@ export function LoginPage() {
 
         <div className={styles.brandRow}>
           <span className={styles.mark} aria-hidden>
-            k
+            {BRAND.mark}
           </span>
-          <span className={styles.brandName}>kodeka analytics</span>
+          <span className={styles.brandName}>{BRAND.name}</span>
         </div>
 
         <div className={styles.center}>
           <p className={styles.eyebrow}>Analytics</p>
           <h1 className={styles.headline}>
-            Innsikt på tvers av <span className={styles.hl}>alle kodeka-flater.</span>
+            Innsikt på tvers av <span className={styles.hl}>alle {BRAND.short}-flater.</span>
           </h1>
           <p className={styles.tagline}>
             Ett dashbord, full kontroll. Personvernvennlig og cookieless, på egen
@@ -53,12 +54,12 @@ export function LoginPage() {
             </li>
             <li>
               <span className={styles.dot} />
-              Data på kodekas egen plattform
+              Data på egen plattform
             </li>
           </ul>
         </div>
 
-        <div className={styles.foot}>© kodeka</div>
+        <div className={styles.foot}>© {BRAND.short}</div>
       </aside>
 
       <main className={styles.formSide}>

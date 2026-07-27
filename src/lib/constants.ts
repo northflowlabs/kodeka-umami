@@ -1,3 +1,5 @@
+import { BRAND } from './brand';
+
 export const CURRENT_VERSION = process.env.currentVersion;
 export const AUTH_TOKEN = 'umami.auth';
 export const LOCALE_CONFIG = 'umami.locale';
@@ -10,9 +12,9 @@ export const LAST_TEAM_CONFIG = 'umami.last-team';
 export const VERSION_CHECK = 'umami.version-check';
 export const SHARE_TOKEN_HEADER = 'x-umami-share-token';
 export const SHARE_CONTEXT_HEADER = 'x-umami-share-context';
-export const HOMEPAGE_URL = 'https://kodeka.no';
-export const DOCS_URL = 'https://kodeka.no';
-export const REPO_URL = 'https://kodeka.no';
+export const HOMEPAGE_URL = BRAND.homepage;
+export const DOCS_URL = BRAND.homepage;
+export const REPO_URL = BRAND.homepage;
 export const UPDATES_URL = '';
 export const TELEMETRY_PIXEL = '';
 export const FAVICON_URL = 'https://icons.duckduckgo.com/ip3/{{domain}}.ico';

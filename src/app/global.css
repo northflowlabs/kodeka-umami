@@ -1,40 +1,95 @@
+/* Per-deployment branding. `<html data-brand>` selects one; env picks the brand.
+   Nøytrale standarder (kampform + fallback); merker overstyrer under. */
 :root {
-  /* kodeka-tema: overstyrer react-zen (lastes etter styles.full.css). */
-  --font-family: var(--font-bricolage), var(--font-inter), sans-serif;
+  --font-family: var(--font-inter), system-ui, sans-serif;
+  /* login-dekor */
+  --brand-blob-1: #d8dcd9;
+  --brand-blob-2: #c7ccc9;
+  --brand-mark-bg: #e2e6e3;
+  --brand-mark-fg: #1b1f1d;
+  --brand-hl: #e2e6e3;
+  --brand-panel: var(--surface-base);
+}
 
+/* ── kodeka: varm krem, plomme, pistasj ─────────────────────────── */
+:root[data-brand='kodeka'] {
+  --font-family: var(--font-bricolage), var(--font-inter), sans-serif;
   --primary: oklch(35% 0.09 349); /* plomme */
   --primary-foreground: oklch(96% 0.012 85); /* krem */
-
-  /* Flater, varm krem */
-  --surface-raised: #faf5ec; /* app-bakgrunn + kort */
+  --surface-raised: #faf5ec;
   --surface-base: #f4ecdd;
   --surface-sunken: #ece2d0;
-  --surface-inverted: #4b1e3d; /* plomme */
-
-  /* Tekst, blekk */
+  --surface-inverted: #4b1e3d;
   --text-primary: #241722;
   --text-muted: rgba(36, 23, 34, 0.55);
   --text-disabled: rgba(36, 23, 34, 0.32);
-
-  /* Linjer + interaktiv */
   --border-default: rgba(36, 23, 34, 0.12);
   --interactive-bg: rgba(36, 23, 34, 0.05);
+  --brand-blob-1: #c9e09b;
+  --brand-blob-2: #e8a175;
+  --brand-mark-bg: #c9e09b;
+  --brand-mark-fg: #4b1e3d;
+  --brand-hl: #c9e09b;
+  --brand-panel: #f4ecdd;
 }
 
-/* kodeka: rundere former på input og knapper, likt konsollet */
-[class~='rounded']:has(> input),
-[class~='rounded']:has(> textarea),
-[class~='rounded']:has(> select) {
+/* ── Northflow: mørk grønn/teal ─────────────────────────────────── */
+:root[data-brand='northflow'] {
+  --font-family: var(--font-inter), system-ui, sans-serif;
+  --primary: #5fe0b0;
+  --primary-foreground: #04120c;
+  --surface-raised: #0b1712;
+  --surface-base: #10201a;
+  --surface-sunken: #0a1611;
+  --surface-inverted: #eafff4;
+  --text-primary: #eafff4;
+  --text-muted: rgba(234, 255, 244, 0.6);
+  --text-disabled: rgba(234, 255, 244, 0.34);
+  --border-default: rgba(234, 255, 244, 0.14);
+  --interactive-bg: rgba(234, 255, 244, 0.06);
+  --brand-blob-1: #5fe0b0;
+  --brand-blob-2: #1f6f52;
+  --brand-mark-bg: #5fe0b0;
+  --brand-mark-fg: #04120c;
+  --brand-hl: #5fe0b0;
+  --brand-panel: #10201a;
+}
+
+/* ── Kampform: varm cream, blekk, banegrønn + oransje ───────────── */
+:root[data-brand='kampform'] {
+  --font-family: var(--font-inter), system-ui, sans-serif;
+  --primary: #0f7a4a;
+  --primary-foreground: #f3f0e8;
+  --surface-raised: #f3f0e8;
+  --surface-base: #ece7da;
+  --surface-sunken: #e2dccd;
+  --surface-inverted: #14110c;
+  --text-primary: #14110c;
+  --text-muted: rgba(20, 17, 12, 0.55);
+  --text-disabled: rgba(20, 17, 12, 0.32);
+  --border-default: rgba(20, 17, 12, 0.12);
+  --interactive-bg: rgba(20, 17, 12, 0.05);
+  --brand-blob-1: #0f7a4a;
+  --brand-blob-2: #ff6a3d;
+  --brand-mark-bg: #0f7a4a;
+  --brand-mark-fg: #f3f0e8;
+  --brand-hl: #ff6a3d;
+  --brand-panel: #ece7da;
+}
+
+/* kodeka: mykere, rundere former (kun kodeka) */
+:root[data-brand='kodeka'] [class~='rounded']:has(> input),
+:root[data-brand='kodeka'] [class~='rounded']:has(> textarea),
+:root[data-brand='kodeka'] [class~='rounded']:has(> select) {
   border-radius: 0.85rem !important;
 }
-button[class~='rounded'] {
+:root[data-brand='kodeka'] button[class~='rounded'] {
   border-radius: 0.85rem !important;
 }
-/* litt rundere kort/paneler for et mykere kodeka-uttrykk */
-[class~='rounded-lg'] {
+:root[data-brand='kodeka'] [class~='rounded-lg'] {
   border-radius: 1rem !important;
 }
-[class~='rounded-md'] {
+:root[data-brand='kodeka'] [class~='rounded-md'] {
   border-radius: 0.8rem !important;
 }
 
