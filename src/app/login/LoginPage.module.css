@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-/* Venstre: branded navy-panel */
+/* Venstre: kremt kodeka-panel, likt konsollet */
 .panel {
   position: relative;
   overflow: hidden;
@@ -14,37 +14,57 @@
   justify-content: space-between;
   gap: 40px;
   padding: 64px 56px;
-  color: #faf5ec;
-  background:
-    radial-gradient(120% 120% at 0% 0%, #5a2a4a 0%, #4b1e3d 46%, #241722 100%);
+  color: #241722;
+  background: #f4ecdd;
 }
 
-.panel::before {
-  /* kodeka organisk grønn form */
-  content: '';
+/* Flate, organiske kodeka-former */
+.blobGreen {
   position: absolute;
   width: 440px;
   height: 440px;
   left: -120px;
-  bottom: -140px;
+  bottom: -150px;
   background: #c9e09b;
-  opacity: 0.18;
   border-radius: 42% 58% 54% 46% / 48% 44% 56% 52%;
+  pointer-events: none;
+}
+.blobPeach {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -60px;
+  top: 48px;
+  background: #e8a175;
+  opacity: 0.85;
+  border-radius: 54% 46% 48% 52% / 52% 56% 44% 48%;
   pointer-events: none;
 }
 
 .brandRow {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   position: relative;
   z-index: 1;
 }
-
+.mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: #c9e09b;
+  color: #4b1e3d;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1;
+  border-radius: 42% 58% 54% 46% / 48% 44% 56% 52%;
+}
 .brandName {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 800;
   letter-spacing: -0.01em;
+  color: #4b1e3d;
 }
 
 .center {
@@ -52,13 +72,30 @@
   z-index: 1;
 }
 
+.eyebrow {
+  margin: 0 0 18px;
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(36, 23, 34, 0.55);
+}
+
 .headline {
   margin: 0;
   font-size: clamp(30px, 3.2vw, 46px);
-  font-weight: 700;
-  line-height: 1.06;
+  font-weight: 800;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   max-width: 15ch;
+  color: #4b1e3d;
+}
+.hl {
+  background: #c9e09b;
+  border-radius: 0.55rem;
+  padding: 0 0.14em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .tagline {
@@ -66,7 +103,7 @@
   max-width: 44ch;
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(250, 245, 236, 0.72);
+  color: rgba(36, 23, 34, 0.66);
 }
 
 .features {
@@ -77,21 +114,18 @@
   flex-direction: column;
   gap: 14px;
 }
-
 .features li {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 14px;
-  color: rgba(250, 245, 236, 0.85);
+  color: rgba(36, 23, 34, 0.78);
 }
-
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 9999px;
-  background: #c9e09b;
-  box-shadow: 0 0 12px rgba(201, 224, 155, 0.8);
+  background: #4b1e3d;
   flex-shrink: 0;
 }
 
@@ -99,24 +133,16 @@
   position: relative;
   z-index: 1;
   font-size: 12px;
-  color: rgba(250, 245, 236, 0.42);
+  color: rgba(36, 23, 34, 0.42);
 }
 
-.watermark {
-  position: absolute;
-  right: -70px;
-  bottom: -80px;
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* Høyre: skjema */
+/* Høyre: skjema på krem */
 .formSide {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: var(--surface-raised);
+  background: #faf5ec;
 }
 
 @media (max-width: 900px) {

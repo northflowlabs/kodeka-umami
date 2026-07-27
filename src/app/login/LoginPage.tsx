@@ -23,17 +23,21 @@ export function LoginPage() {
   return (
     <div className={styles.wrap}>
       <aside className={styles.panel}>
+        <span className={styles.blobGreen} aria-hidden />
+        <span className={styles.blobPeach} aria-hidden />
+
         <div className={styles.brandRow}>
-          <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden>
-            <rect width="24" height="24" rx="5" fill="#fff" fillOpacity="0.12" />
-            <path fill="#fff" d="M4.6 6 12 12 4.6 18Z" />
-            <path fill="#fff" d="M19.4 6 12 12 19.4 18Z" />
-          </svg>
+          <span className={styles.mark} aria-hidden>
+            k
+          </span>
           <span className={styles.brandName}>kodeka analyse</span>
         </div>
 
         <div className={styles.center}>
-          <h1 className={styles.headline}>Innsikt på tvers av alle kodeka-flater.</h1>
+          <p className={styles.eyebrow}>Analyse</p>
+          <h1 className={styles.headline}>
+            Innsikt på tvers av <span className={styles.hl}>alle kodeka-flater.</span>
+          </h1>
           <p className={styles.tagline}>
             Ett dashbord, full kontroll. Personvernvennlig og cookieless, på egen
             infrastruktur.
@@ -55,13 +59,6 @@ export function LoginPage() {
         </div>
 
         <div className={styles.foot}>© kodeka</div>
-
-        <div className={styles.watermark} aria-hidden>
-          <svg width="340" height="340" viewBox="0 0 24 24" fill="#fff">
-            <path d="M4.6 6 12 12 4.6 18Z" />
-            <path d="M19.4 6 12 12 19.4 18Z" />
-          </svg>
-        </div>
       </aside>
 
       <main className={styles.formSide}>
