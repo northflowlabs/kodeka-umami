@@ -69,7 +69,7 @@ const Info = ({
       <Label>{label}</Label>
       <Row alignItems="center" gap>
         {icon && <Icon>{icon}</Icon>}
-        {children || '—'}
+        {children || '-'}
       </Row>
     </Column>
   );

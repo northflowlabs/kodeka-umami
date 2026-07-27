@@ -6,8 +6,8 @@ Thanks for your interest in contributing to Umami! This document outlines the pr
 
 Umami uses the following long-lived branches:
 
-- `master` — stable, released code. **Do not open PRs against `master`.**
-- `dev` — active development. **All pull requests should target `dev`.**
+- `master` , stable, released code. **Do not open PRs against `master`.**
+- `dev` , active development. **All pull requests should target `dev`.**
 
 Feature branches and fixes are merged into `dev`, and `dev` is periodically merged into `master` for releases.
 
@@ -19,7 +19,7 @@ Feature branches and fixes are merged into `dev`, and `dev` is periodically merg
    git pull origin dev
    git checkout -b my-feature
    ```
-2. Make your changes. Keep PRs focused — one logical change per PR.
+2. Make your changes. Keep PRs focused , one logical change per PR.
 3. Ensure the project builds and lints cleanly:
    ```bash
    pnpm install
