@@ -30,11 +30,11 @@ export function LoginPage() {
           <span className={styles.mark} aria-hidden>
             k
           </span>
-          <span className={styles.brandName}>kodeka analyse</span>
+          <span className={styles.brandName}>kodeka analytics</span>
         </div>
 
         <div className={styles.center}>
-          <p className={styles.eyebrow}>Analyse</p>
+          <p className={styles.eyebrow}>Analytics</p>
           <h1 className={styles.headline}>
             Innsikt på tvers av <span className={styles.hl}>alle kodeka-flater.</span>
           </h1>
