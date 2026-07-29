@@ -40,7 +40,8 @@ export default async function ({ children }) {
       className={`${bricolage.variable} ${inter.variable}`}
     >
       <head>
-        <link rel="icon" href={brand.favicon} />
+        {/* ?v=3 cache-buster: favicons caches ekstremt hardt; tvinger fersk (transparent) henting. */}
+        <link rel="icon" type="image/png" href={`${brand.favicon}?v=3`} />
         <meta name="msapplication-TileColor" content={brand.themeColor} />
         <meta name="theme-color" content={brand.themeColor} />
         <meta name="robots" content="noindex,nofollow" />

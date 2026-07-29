@@ -93,6 +93,33 @@
   border-radius: 0.8rem !important;
 }
 
+/* Nedtrekksmenyer (react-zen popover + react-aria listbox): tving lys krem flate
+   med blekk tekst, ellers arver popover-en en mørk flate = mørk-på-mørk. */
+:root[data-brand='kodeka'] .zen-popover,
+:root[data-brand='kodeka'] .zen-popover [class~='zen-menu'],
+:root[data-brand='kodeka'] .zen-popover [role='listbox'],
+:root[data-brand='kodeka'] .zen-popover [role='menu'] {
+  background-color: #faf5ec !important;
+  color: #241722 !important;
+  border: 1px solid rgba(36, 23, 34, 0.12) !important;
+  color-scheme: light;
+}
+:root[data-brand='kodeka'] .zen-popover [role='option'],
+:root[data-brand='kodeka'] .zen-popover [role='menuitem'],
+:root[data-brand='kodeka'] .zen-popover [role='menuitemradio'] {
+  color: #241722 !important;
+  background-color: transparent !important;
+}
+:root[data-brand='kodeka'] .zen-popover [role='option'][data-focused],
+:root[data-brand='kodeka'] .zen-popover [role='option'][data-hovered],
+:root[data-brand='kodeka'] .zen-popover [role='option'][data-selected],
+:root[data-brand='kodeka'] .zen-popover [role='option'][aria-selected='true'],
+:root[data-brand='kodeka'] .zen-popover [role='menuitem'][data-focused],
+:root[data-brand='kodeka'] .zen-popover [role='menuitem'][data-hovered] {
+  background-color: #c9e09b !important; /* pistasj-highlight */
+  color: #241722 !important;
+}
+
 html,
 body {
   font-family: var(--font-family), sans-serif;
