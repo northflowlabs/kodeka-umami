@@ -1,8 +1,8 @@
 /**
  * Per-deployment analytics branding.
  *
- * One Umami fork, several Vercel projects. Each sets NEXT_PUBLIC_ANALYTICS_BRAND
- * so it shows its own brand (name, palette, favicon) — no brand is hardcoded.
+ * One Umami fork, several Vercel projects. The brand is resolved from the
+ * request host (see resolveBrand) — no brand is hardcoded and no env is read.
  * Colours are applied via `<html data-brand={slug}>` + blocks in global.css.
  */
 export type BrandSlug = 'kodeka' | 'northflow' | 'kampform';
@@ -62,9 +62,15 @@ export const BRANDS: Record<BrandSlug, Brand> = {
  * Resolve the brand from the request host. Robust against the shared Vercel
  * team suffix: every deployment is `*-northflow.vercel.app`, so we match the
  * unique tokens first (kampform, kodeka) and only then the umami/northflow host.
+ *
+ * A spoofed/foreign Host header (e.g. `kodeka.evil.com`) must NOT select a brand:
+ * we only trust our own domains + the Vercel preview suffix, else DEFAULT_BRAND.
  */
 export function resolveBrand(host?: string | null): Brand {
-  const h = (host || '').toLowerCase();
+  const h = (host || '').toLowerCase().split(':')[0];
+  const trusted =
+    /(^|\.)(kodeka\.no|northflow\.no|kampform\.no)$/.test(h) || h.endsWith('.vercel.app');
+  if (!trusted) return DEFAULT_BRAND;
   if (h.includes('kampform')) return BRANDS.kampform;
   if (h.includes('kodeka')) return BRANDS.kodeka;
   if (h === 'analytics.northflow.no' || h.startsWith('umami-') || h.startsWith('umami.'))
