@@ -120,6 +120,33 @@
   color: #241722 !important;
 }
 
+/* Popover-elevasjon: react-zens standard-skygge er en hard, nær-svart ring som
+   ser ut som en kant i det lyse kodeka-temaet. Bytt til myk plomme-skygge,
+   nøytraliser indre skygge/ring, og gjør alle innvendige kanter diskré. */
+:root[data-brand='kodeka'] .zen-popover {
+  box-shadow:
+    0 18px 44px -22px rgba(75, 30, 61, 0.42),
+    0 4px 14px -8px rgba(75, 30, 61, 0.2) !important;
+  outline: none !important;
+}
+:root[data-brand='kodeka'] .zen-popover [role='listbox'],
+:root[data-brand='kodeka'] .zen-popover [role='menu'],
+:root[data-brand='kodeka'] .zen-popover [class~='zen-menu'] {
+  box-shadow: none !important;
+  outline: none !important;
+}
+:root[data-brand='kodeka'] .zen-popover * {
+  border-color: rgba(36, 23, 34, 0.1) !important;
+}
+
+/* Sekundærknapp (f.eks. «Avvis») i dialoger: knappen rett før primærknappen
+   (`.bg-primary` = «Lagre»). Hover = pistasj, vår grønne signatur. */
+:root[data-brand='kodeka'] button:has(+ button.bg-primary):hover,
+:root[data-brand='kodeka'] button:has(+ button.bg-primary)[data-hovered] {
+  background-color: #c9e09b !important;
+  color: #241722 !important;
+}
+
 html,
 body {
   font-family: var(--font-family), sans-serif;
